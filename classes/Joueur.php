@@ -24,14 +24,12 @@ public function getNom() : string
 return $this->nom;
 }
 
-
 public function setNom($nom)
 {
 $this->nom = $nom;
 
 return $this;
 }
-
 
 public function getPrenom() : string
 {
@@ -46,12 +44,10 @@ $this->prenom = $prenom;
 return $this;
 }
 
-
 public function getDateNaissance() : DateTime
 {
 return $this->dateNaissance;
 }
-
 
 public function setDateNaissance($dateNaissance)
 {
@@ -78,4 +74,5 @@ public function getInfos(){
 public function __toString(){
     return $this->nom .$this->prenom ." né le " .$this->dateNaissance->format("d-m-Y");
 }
+
 }

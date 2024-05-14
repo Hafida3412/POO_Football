@@ -55,11 +55,19 @@ public function setJoueurs($joueurs)
     return $this;
 }
 
-public function addJoueur(Joueur $joueur){/*on rajoute un joueur dans l'équipe*/
+/*on rajoute un joueur dans l'équipe*/
+public function addJoueur(Joueur $joueur){
     $this->joueurs[] = $joueur;
 //ça équivaut à: array_push($this->joueurs, $ joueur);
 }
 
+//Tableau pour afficher les joueurs de l'équipe
+public function afficherJoueurs(){
+    $result = "<h2> Joueurs de $this</h2>";
+    foreach($this->joueurs as $joueur){
+        $result .= $joueur."<br>";
+    }
+}
 public function __toString(){
     return $this->nom . " (".$this->dateCreation->format("Y").")";
 }
