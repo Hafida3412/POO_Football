@@ -61,7 +61,7 @@ public function getInfosJoueurs(){
 }
 
 public function __toString(){
-    return $this->nom .$this->prenom;
+    return $this->nom .$this->prenom ." né le " .$this->dateNaissance->format("d-m-Y");
 }
 
 }
