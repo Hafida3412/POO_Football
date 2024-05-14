@@ -7,11 +7,10 @@ private string $nom;
 private string $prenom;
 private DateTime $dateNaissance;
 
-public function __construct(string $nom, string $prenom, 
-DateTime $dateNaissance){
+public function __construct(string $nom, string $prenom, string $dateNaissance){
     $this->nom = $nom;
     $this->prenom = $prenom;
-    $this->dateNaissance = $dateNaissance;
+    $this->dateNaissance = new DateTime($dateNaissance);
 }
 
 

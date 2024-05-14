@@ -6,9 +6,9 @@ class Equipe {
 private string $nom;
 private DateTime $dateCreation;
 
-public function __construct(string $nom, DateTime $dateCreation){
+public function __construct(string $nom, string $dateCreation){
     $this->nom = $nom;
-    $this->dateCreation = $dateCreation;
+    $this->dateCreation = new DateTime ($dateCreation);
 }
 
 
