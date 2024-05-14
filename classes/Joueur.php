@@ -56,4 +56,12 @@ $this->dateNaissance = $dateNaissance;
 return $this;
 }
 
+public function getInfosJoueurs(){
+    return $this->nom. " ".$this->prenom;
+}
+
+public function __toString(){
+    return $this->nom .$this->prenom;
+}
+
 }

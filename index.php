@@ -21,3 +21,4 @@ $pays1 = new Pays("Italie");
 //var_dump ($equipe1);
 
 //var_dump($pays1);
+
