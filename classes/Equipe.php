@@ -9,7 +9,7 @@ private DateTime $dateCreation;
 private array $joueurs;
 
 
-public function __construct(string $nom, string $dateCreation){
+public function __construct(string $nom, string $dateCreation, $joueurs){
     $this->nom = $nom;
     $this->dateCreation = new DateTime($dateCreation);
     $this->joueurs = [];
@@ -63,10 +63,14 @@ public function addJoueur(Joueur $joueur){
 
 //Tableau pour afficher les joueurs de l'équipe
 public function afficherJoueurs(){
-    $result = "<h2> Joueurs de $this</h2>";
+    $result = "<h2> Joueurs de $this</h2><ul>";
     foreach($this->joueurs as $joueur){
-        $result .= $joueur."<br>";
+        $age = date_diff(new DateTime(), $joueur->getDateNaissance())->y;// -> CALCUL AGE DU JOUEUR
+            $result .= "<li>".$joueur->getNom()." ".$joueur->getPrenom()." - ".$age." ans</li>";
     }
+    $result .= "</ul>";
+
+    return $result;
 }
 public function __toString(){
     return $this->nom . " (".$this->dateCreation->format("Y").")";

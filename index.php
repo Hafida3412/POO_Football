@@ -10,9 +10,18 @@ spl_autoload_register(function ($class_name){
     require 'classes/'. $class_name. '.php';
 });
 
-$equipe1 = new Equipe( "Juventus", 1897, $joueur1);
+$equipe1 = new Equipe( "Juventus", "1897", []); // -> [] correspond au tableau des joueurs
+$joueur1 = new Joueur("Ronaldo"," Christiano", "1985-02-05", $equipe1);
 
-$joueur1 = new Joueur("Ronaldo"," Christiano", 1985-02-05, $equipe1);
+$equipe2 = new Equipe("PSG", 1970, []);
+$joueur2 = new Joueur("Lionel", "Messi", "1987-06-24", $equipe2);
+
+$equipe3 = new Equipe("FC Barcelone", "1899", []);
+$joueur3 = new Joueur("Neymar", "Junior","1992-02-05", $equipe3);
+$joueur3 = new Joueur("Lionel", "Messi", "1987-06-24", $equipe3);
+
+$equipe4 = new Equipe("Racing Club Stras", "1906", []);
+$joueur4 = new Joueur("Kevin", "Gameiro", "1987-05-09", $equipe4);
 
 $pays1 = new Pays("Italie", $equipe1);
 
@@ -33,5 +42,8 @@ echo "<br>";
 echo "<br>";
 
 echo $joueur1->getInfos();
-echo $equipe1->afficherJoueurs();
 
+echo $equipe1->afficherJoueurs();
+echo $equipe2->afficherJoueurs();
+echo $equipe3->afficherJoueurs();
+echo $equipe4->afficherJoueurs();
