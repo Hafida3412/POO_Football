@@ -6,13 +6,13 @@ class Equipe {
 private string $nom;
 private DateTime $dateCreation;
 
-private array $joueurs;
+private array $contrats;
 
 
-public function __construct(string $nom, string $dateCreation, $joueurs){
+public function __construct(string $nom, string $dateCreation){
     $this->nom = $nom;
     $this->dateCreation = new DateTime($dateCreation);
-    $this->joueurs = [];
+    $this->contrats = [];
       
 }
 
@@ -41,7 +41,7 @@ $this->dateCreation = $dateCreation;
 return $this;
 }
 
-public function getJoueurs()
+/*public function getJoueurs()
 {
     return $this->joueurs;
 }
@@ -53,7 +53,7 @@ public function setJoueurs($joueurs)
     return $this;
 }
 
-/*on rajoute un joueur dans l'équipe*/
+/*on rajoute un joueur dans l'équipe
 public function addJoueur(Joueur $joueur){
     $this->joueurs[] = $joueur;
 //ça équivaut à: array_push($this->joueurs, $ joueur);
@@ -69,9 +69,35 @@ public function afficherJoueurs(){
     $result .= "</ul>";
 
     return $result;
+}*/
+
+
+public function getContrats()
+{
+    return $this->contrats;
+}
+
+public function setContrats($contrats)
+{
+    $this->contrats = $contrats;
+    
+    return $this;
+}
+
+public function addContrat(Contrat $contrat){
+    $this->contrats[] = $contrat;
+}
+
+public function afficherJoueurs(){
+    $result = "<h2> Joueurs de $this</h2><ul>";
+    foreach($this->contrats as $contrat){
+           $result .= "<li>".$contrat->getJoueur()." (". $contrat->getAnnee_debut_saison().")"."</li>";
+    }
+    $result .= "</ul>";
+
+    return $result;
 }
 public function __toString(){
     return $this->nom . " (".$this->dateCreation->format("Y").")";
 }
-
 }
