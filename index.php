@@ -37,7 +37,7 @@ $pays4 = new Pays("Angleterre", $equipe5);
 
 //var_dump($pays1);
 
-echo "$joueur1";
+/*echo "$joueur1";
 echo "<br>";
 echo "<br>";
 echo "$equipe1";
@@ -45,7 +45,7 @@ echo "<br>";
 echo "<br>";
 echo "$pays1";
 echo "<br>";
-echo "<br>";
+echo "<br>";*/
 
 echo $joueur1->getInfos();
 
@@ -53,6 +53,7 @@ echo $equipe1->afficherJoueurs();
 echo $equipe2->afficherJoueurs();
 echo $equipe3->afficherJoueurs();
 echo $equipe4->afficherJoueurs();
+echo $equipe5->afficherJoueurs();
 echo "<br>";
 echo "<br>";
 echo $pays1->afficherEquipes();

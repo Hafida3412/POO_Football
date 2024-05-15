@@ -36,7 +36,6 @@ public function getPrenom() : string
 return $this->prenom;
 }
 
-
 public function setPrenom($prenom)
 {
 $this->prenom = $prenom;

@@ -22,7 +22,6 @@ public function getNom() : string
 return $this->nom;
 }
 
-
 public function setNom($nom)
 {
 $this->nom = $nom;
@@ -34,7 +33,6 @@ public function getDateCreation() : DateTime
 {
 return $this->dateCreation;
 }
-
 
 public function setDateCreation($dateCreation)
 {
@@ -61,7 +59,7 @@ public function addJoueur(Joueur $joueur){
 //ça équivaut à: array_push($this->joueurs, $ joueur);
 }
 
-//Tableau pour afficher les joueurs de l'équipe
+//Tableau pour afficher les joueurs de l'équipe:
 public function afficherJoueurs(){
     $result = "<h2> Joueurs de $this</h2><ul>";
     foreach($this->joueurs as $joueur){

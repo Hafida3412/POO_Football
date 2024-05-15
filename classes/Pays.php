@@ -26,22 +26,12 @@ $this->nom = $nom;
 return $this;
 }
 
-/*public function getEquipe() : Equipe
-{
-return $this->equipe;
-}
-
-public function setEquipe(Equipe $equipe)
-{
-$this->equipe = $equipe;
-
-return $this;
-}*/
-
 public function addEquipe(Equipe $equipe){
     $this->equipes[] = $equipe;
-//ça équivaut à: array_push($this->joueurs, $ joueur);
+//ça équivaut à: array_push($this->joueurs, $joueur);
 }
+
+//Tableau pour afficher les équipes d'un pays:
 public function afficherEquipes(){
     $result = "<h2> Equipes de $this</h2><ul>";
     foreach($this->equipes as $equipe){
