@@ -4,11 +4,12 @@ class Pays {
 
 //attributs
 private string $nom;
-private Equipe $equipe;
-
+//private Equipe $equipe;
+private array $equipes;
 public function __construct (string $nom, Equipe $equipe) {
     $this->nom = $nom;
-    $this->equipe = $equipe;
+    $this->equipes = [];
+    $this->addEquipe($equipe); // Ajoutez l'équipe passée en paramètre à la liste des équipes     
 }
 
 //GETTERS AND SETTERS
@@ -25,7 +26,7 @@ $this->nom = $nom;
 return $this;
 }
 
-public function getEquipe() : Equipe
+/*public function getEquipe() : Equipe
 {
 return $this->equipe;
 }
@@ -35,10 +36,23 @@ public function setEquipe(Equipe $equipe)
 $this->equipe = $equipe;
 
 return $this;
-}
+}*/
 
+public function addEquipe(Equipe $equipe){
+    $this->equipes[] = $equipe;
+//ça équivaut à: array_push($this->joueurs, $ joueur);
+}
+public function afficherEquipes(){
+    $result = "<h2> Equipes de $this</h2><ul>";
+    foreach($this->equipes as $equipe){
+            $result .= "<li>".$equipe->getNom()." "."(".$equipe->getdateCreation()->format("Y").")"."</li>";
+    }
+    $result .= "</ul>";
+
+    return $result;
+}
 public function __toString(){
-    return $this->nom. " : " .$this->equipe;
+    return $this->nom;
 }
 
 }
