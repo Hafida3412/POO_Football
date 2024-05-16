@@ -85,6 +85,16 @@ public function setContrats($contrats)
 
 public function addContrat(Contrat $contrat){
     $this->contrats[] = $contrat;
+
+}
+public function afficherEquipes(){
+    $result = "<h2> Equipes de $this</h2><ul>";
+    foreach($this->contrats as $contrat){
+    $result .= "<li>".$contrat->getEquipe()." (". $contrat->getAnnee_debut_saison().")"."</li>"; "</li>";
+    }
+    $result .= "</ul>";
+    
+    return $result;
 }
 public function __toString(){
     return $this->nom."  ".$this->prenom . ": ". $age = date_diff(new DateTime(), $this->getDateNaissance())->y. "ans.";

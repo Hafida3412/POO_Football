@@ -98,6 +98,6 @@ public function afficherJoueurs(){
     return $result;
 }
 public function __toString(){
-    return $this->nom . " (".$this->dateCreation->format("Y").")";
+    return $this->nom /* . " (".$this->dateCreation->format("Y").")"*/;
 }
 }

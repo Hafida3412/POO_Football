@@ -26,6 +26,8 @@ $Gameiro = new Joueur("Kevin", "Gameiro", "1987-05-09");
 $Manchester = new Equipe("Manchester United", "1878");
 $Rashford = new Joueur("Marcus", "Rashford", "1997-10-31");
 
+$RealMadrid = new Equipe("Real Madrid", "1902-11-06");
+
 $Italie = new Pays("Italie", $Juventus);
 $France = new Pays("France", $Psg);
 $Espagne = new Pays("Espagne", $Barcelone);
@@ -34,9 +36,12 @@ $Angleterre = new Pays("Angleterre", $Manchester);
 $c1 = new Contrat($Psg, $Messi, "2021-01-03");
 $c2 = new Contrat($Psg, $Mbappe, "2017-04-01");
 $c3 = new Contrat($Psg, $Neymar, "2017-11-10");
-
 $c4 = new Contrat($Barcelone, $Neymar, "2013-05-03");
-$C5 = new Contrat($Juventus, $Ronaldo, "2018-11-05");
+$c5 = new Contrat($Barcelone,  $Messi, "2004-11-08");
+$c6 = new Contrat($Juventus, $Ronaldo, "2018-11-05");
+$c7 = new Contrat($Manchester, $Ronaldo, "2021-11-03");
+$c8 = new Contrat($RealMadrid, $Ronaldo, "2009-11-03");
+
 
 //var_dump($joueur1);
 
@@ -65,3 +70,10 @@ echo $Italie->afficherEquipes();
 echo $France->afficherEquipes();
 echo $Espagne->afficherEquipes();
 echo $Angleterre->afficherEquipes();
+echo "<br>";
+echo "<br>";
+echo $Ronaldo->afficherEquipes();
+echo $Neymar->afficherEquipes();
+echo $Messi->afficherEquipes();
+echo $Mbappe->afficherEquipes();
+

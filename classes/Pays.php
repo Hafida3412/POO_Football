@@ -37,13 +37,12 @@ public function addEquipe(Equipe $equipe){
 public function afficherEquipes(){
     $result = "<h2> Equipes de $this</h2><ul>";
     foreach($this->equipes as $equipe){
-            $result .= "<li>".$equipe->getNom()." "."(".$equipe->getdateCreation()->format("Y").")"."</li>";
+    $result .= "<li>".$equipe->getNom()." "."(".$equipe->getdateCreation()->format("Y").")"."</li>";
     }
     $result .= "</ul>";
 
     return $result;
 }
-
 
     public function __toString(){
     return $this->nom;
