@@ -1,6 +1,8 @@
 <?php
 
 class Contrat{
+
+//attributs
     private Equipe $equipe;
     private Joueur $joueur;
     private DateTime $annee_debut_saison;
@@ -13,6 +15,7 @@ public function __construct(Equipe $equipe, Joueur $joueur, string $annee_debut_
     $this->joueur->addContrat($this);// et dans "Joueur"
 }
 
+//GETTERS AND SETTERS
     public function getEquipe()
     {
         return $this->equipe;
