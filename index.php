@@ -9,6 +9,8 @@
 spl_autoload_register(function ($class_name){
     require 'classes/'. $class_name. '.php';
 });
+
+//CREATION DES PAYS//
 $Italie = new Pays("Italie");
 $France = new Pays("France");
 $Espagne = new Pays("Espagne");
@@ -17,7 +19,8 @@ $Portugal = new Pays("Portugal");
 $Argentine = new Pays("Argentine");
 $Bresil = new Pays("Brésil");
 
-$Juventus = new Equipe( "Juventus", "1897-11-05", $Italie); // -> [] correspond au tableau des joueurs
+//CREATION DES EQUIPES ET DES JOUEURS//
+$Juventus = new Equipe( "Juventus", "1897-11-05", $Italie); 
 $Ronaldo = new Joueur("Ronaldo"," Cristiano", "1985-02-05", $Portugal);
 
 $Psg = new Equipe("PSG", 1970, $France);
@@ -36,7 +39,7 @@ $Rashford = new Joueur("Marcus", "Rashford", "1997-10-31", $Angleterre);
 $RealMadrid = new Equipe("Real Madrid", "1902-11-06", $Espagne);
 
 
-
+//CREATION DES CONTRATS//
 $c1 = new Contrat($Psg, $Messi, "2021-01-03");
 $c2 = new Contrat($Psg, $Mbappe, "2017-04-01");
 $c3 = new Contrat($Psg, $Neymar, "2017-11-10");
@@ -47,6 +50,7 @@ $c7 = new Contrat($Manchester, $Ronaldo, "2021-11-03");
 $c8 = new Contrat($RealMadrid, $Ronaldo, "2009-11-03");
 
 
+//////////////////////////////////TESTS DU CODE/////////////////////////////////////////
 //var_dump($joueur1);
 
 //var_dump ($equipe1);
@@ -62,20 +66,28 @@ echo "<br>";
 echo "$pays1";
 echo "<br>";
 echo "<br>";*/
+///////////////////////////////////////////////////////////////////////////////////////
 
+//AFFICHAGE DES JOUEURS D UNE EQUIPE//
 echo $Juventus->afficherJoueurs();
 echo $Psg->afficherJoueurs();
 echo $Barcelone->afficherJoueurs();
 echo $Rcs->afficherJoueurs();
 /*echo $Manchester->afficherJoueurs();*/
+
 echo "<br>";
 echo "<br>";
+
+//AFFICHAGE DES EQUIPES D UN PAYS//
 echo $Italie->afficherEquipes();
 echo $France->afficherEquipes();
 echo $Espagne->afficherEquipes();
 echo $Angleterre->afficherEquipes();
+
 echo "<br>";
 echo "<br>";
+
+//AFFICHAGE DES EQUIPES D UN JOUEUR//
 echo $Ronaldo->afficherEquipes();
 echo $Neymar->afficherEquipes();
 echo $Messi->afficherEquipes();

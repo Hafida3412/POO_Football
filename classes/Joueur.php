@@ -15,9 +15,7 @@ public function __construct(string $nom, string $prenom, string $dateNaissance, 
     $this->dateNaissance = new DateTime($dateNaissance);
     $this->contrats = [];
     $this->pays = $pays;
-
-    /*$this->equipe->addJoueur($this);/*à chaque fois que je vais créer un joueur,
-il va se rajouter dans l'équipe*/   
+  
 }
 
 
@@ -58,22 +56,6 @@ $this->dateNaissance = $dateNaissance;
 return $this;
 }
 
-/*public function getEquipe(): Equipe
-{
-    return $this->equipe;
-}
-
-public function setEquipe(Equipe $equipe)
-{
-    $this->equipe = $equipe;
-    
-    return $this;
-}*/
-
-/*public function getInfos(){
-    return $this. " joue dans l'équipe " . $this->equipe->getNom();
-}*/
-
 public function getContrats()
 {
     return $this->contrats;
@@ -84,23 +66,6 @@ public function setContrats($contrats)
     
     return $this;
 }
-
-public function addContrat(Contrat $contrat){
-    $this->contrats[] = $contrat;
-
-}
-
-//Affichage des équipes d'un joueur
-public function afficherEquipes(){
-    $result = "<h2> Equipes de". $this. " ". $this->getPays(). "</h2><ul>";
-    foreach($this->contrats as $contrat){
-    $result .= "<li>".$contrat->getEquipe()->getNom()." (". $contrat->getAnnee_debut_saison().")"."</li>";
-    }
-    $result .= "</ul>";
-    
-    return $result;
-}
-
 public function getPays()
 {
     return $this->pays;
@@ -112,8 +77,27 @@ public function setPays($pays)
     
     return $this;
 }
+
+//Ajout de la méthode Contrat
+public function addContrat(Contrat $contrat){
+    $this->contrats[] = $contrat;
+
+}
+
+//Affichage des équipes d'un joueur
+public function afficherEquipes(){
+    $result = "<h2> Equipes de ". $this ."<br>". $this->getPays(). "</h2><ul>"; //Rajout du pays
+    foreach($this->contrats as $contrat){
+    $result .= "<li>".$contrat->getEquipe()->getNom()." (". $contrat->getAnnee_debut_saison().")"."</li>";
+    }
+    $result .= "</ul>";
+    
+    return $result;
+}
+
+//Fonction __tostring qui rapporte le nom, prénom et âge du joueur (inclus formule pour calculer l'âge)
 public function __toString(){
-    return $this->nom."  ".$this->prenom . ": ". $age = date_diff(new DateTime(), $this->getDateNaissance())->y. "ans.";
+    return $this->nom."  ".$this->prenom . " - ". $age = date_diff(new DateTime(), $this->getDateNaissance())->y. "ans";
 }
 
 }
