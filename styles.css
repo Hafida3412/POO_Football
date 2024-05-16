@@ -1,35 +1,29 @@
 
+.cards{
+    display: flex;
+    gap: 10px;
+}
 
 .card{
     border: 1px solid none;
     border-radius: 5px;
+    padding: 10px; 
+    margin-bottom: 10px;
+    width: 200px;
+    height: 200px;
+    
+}
+
+.card.blue {
     background-color: #83b4f3;
-    padding: 10px; 
-    margin-bottom: 10px;
-    width: 200px;
-    height: 200px;
-
 }
 
-.card1{
-    border: 1px solid none;
-    border-radius: 5px;
+.card.red{
     background-color: #f38383;
-    padding: 10px; 
-    margin-bottom: 10px;
-    width: 200px;
-    height: 200px;
 }
 
-.card2{
-    border: 1px solid none;
-    border-radius: 5px;
+.card.green{
     background-color: #0db871;
-    padding: 10px; 
-    margin-bottom: 10px;
-    width: 200px;
-    height: 200px;
-
 }
 
 li{

@@ -86,7 +86,7 @@ public function addContrat(Contrat $contrat){
 
 //Affichage des équipes d'un joueur
 public function afficherEquipes(){
-    $result = "<div class= 'card2'><h2> ". $this ."<br>". $this->getPays(). "</h2><ul>"; //Rajout du pays
+    $result = "<div class= 'card green'><h2> ". $this ."<br>". $this->getPays(). "</h2><ul>"; //Rajout du pays
     foreach($this->contrats as $contrat){
     $result .= "<li>".$contrat->getEquipe()->getNom()." (". $contrat->getAnnee_debut_saison().")"."</li>";
     }

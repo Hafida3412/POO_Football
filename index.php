@@ -77,31 +77,47 @@ echo "<br>";*/
 ///////////////////////////////////////////////////////////////////////////////////////
 
 //AFFICHAGE DES JOUEURS D UNE EQUIPE//
-echo $Juventus->afficherJoueurs();
-echo $Psg->afficherJoueurs();
-echo $Barcelone->afficherJoueurs();
-echo $Rcs->afficherJoueurs();
+?>
+
+<div class="cards">
+    <?= $Juventus->afficherJoueurs(); ?>
+    <?= $Psg->afficherJoueurs(); ?>
+    <?= $Barcelone->afficherJoueurs(); ?>
+    <?= $Rcs->afficherJoueurs(); ?>
+</div>
+
+<?php
+
 /*echo $Manchester->afficherJoueurs();*/
 
 echo "<br>";
 echo "<br>";
 
 //AFFICHAGE DES EQUIPES D UN PAYS//
-echo $Italie->afficherEquipes();
-echo $France->afficherEquipes();
-echo $Espagne->afficherEquipes();
-echo $Angleterre->afficherEquipes();
+?>
+
+<div class="cards">
+    <?= $Italie->afficherEquipes(); ?>
+    <?= $France->afficherEquipes(); ?>
+    <?= $Espagne->afficherEquipes(); ?>
+    <?= $Angleterre->afficherEquipes(); ?>
+</div>
+<?php
 
 echo "<br>";
 echo "<br>";
 
 //AFFICHAGE DES EQUIPES D UN JOUEUR//
-echo $Ronaldo->afficherEquipes();
-echo $Neymar->afficherEquipes();
-echo $Messi->afficherEquipes();
-echo $Mbappe->afficherEquipes();
-
 ?>
 
+<div class="cards">
+    <?= $Ronaldo->afficherEquipes(); ?>
+    <?= $Neymar->afficherEquipes(); ?>
+    <?= $Messi->afficherEquipes(); ?>
+    <?= $Mbappe->afficherEquipes(); ?>
+</div>
+<?php
+
+?>
 </body>
 </html>

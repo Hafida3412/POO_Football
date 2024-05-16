@@ -34,7 +34,7 @@ public function addEquipe(Equipe $equipe){
 
 //Tableau pour afficher les équipes d'un pays:
 public function afficherEquipes(){
-    $result = "<div class='card1'><h2> $this</h2><ul>";
+    $result = "<div class='card red'><h2> $this</h2><ul>";
     foreach($this->equipes as $equipe){
     $result .= "<li>".$equipe->getNom()." "."(".$equipe->getdateCreation()->format("Y").")"."</li>";
     }
