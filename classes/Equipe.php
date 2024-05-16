@@ -86,6 +86,7 @@ public function addContrat(Contrat $contrat){
     $this->contrats[] = $contrat;
 }
 
+//Affichage des joueurs d'une équipe:
 public function afficherJoueurs(){
     $result = "<h2> Joueurs de $this</h2><ul>";
     foreach($this->contrats as $contrat){
