@@ -44,8 +44,6 @@ public function afficherEquipes(){
     return $result;
 }
 
-
-
 public function __toString(){
 return $this->nom;
 }

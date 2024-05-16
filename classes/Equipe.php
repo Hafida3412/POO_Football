@@ -5,7 +5,6 @@ class Equipe {
 //attributs
 private string $nom;
 private DateTime $dateCreation;
-
 private array $contrats;
 
 
@@ -13,7 +12,6 @@ public function __construct(string $nom, string $dateCreation){
     $this->nom = $nom;
     $this->dateCreation = new DateTime($dateCreation);
     $this->contrats = [];
-      
 }
 
 //GETTERS AND SETTERS
@@ -97,7 +95,8 @@ public function afficherJoueurs(){
 
     return $result;
 }
+
 public function __toString(){
-    return $this->nom /* . " (".$this->dateCreation->format("Y").")"*/;
+    return $this->nom . " (".$this->dateCreation->format("Y").")";
 }
 }
