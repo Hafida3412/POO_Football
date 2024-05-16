@@ -73,9 +73,9 @@ public function addContrat(Contrat $contrat){
 
 //Affichage des joueurs d'une équipe:
 public function afficherJoueurs(){
-    $result = "<div class='cadre'><h2> ". $this. "<br>".$this->getPays()."</h2><ul>"; //Rajout du pays
+    $result = "<div class='card'><h2> ". $this. "<br>".$this->getPays()."</h2><ul>"; //Rajout du pays
     foreach($this->contrats as $contrat){
-    $result .= "<li>".$contrat->getJoueur()." (". $contrat->getAnnee_debut_saison().")"."</li>";
+    $result .= "<li>".$contrat->getJoueur()->getNom()." (". $contrat->getAnnee_debut_saison().")"."</li>";
     }
     $result .= "</ul></div>";
 
@@ -84,7 +84,7 @@ public function afficherJoueurs(){
 
 //Fonction __toString qui rapporte le nom de l'équipe + sa date de création:
 public function __toString(){
-    return $this->nom . " ("."créé en".$this->dateCreation->format("Y").")";
+    return $this->nom . "<br>" ." ("."créé en".$this->dateCreation->format("Y").")";
 }
 
 }

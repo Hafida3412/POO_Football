@@ -86,7 +86,7 @@ public function addContrat(Contrat $contrat){
 
 //Affichage des équipes d'un joueur
 public function afficherEquipes(){
-    $result = "<div class= 'cadre2'><h2> ". $this ."<br>". $this->getPays(). "</h2><ul>"; //Rajout du pays
+    $result = "<div class= 'card2'><h2> ". $this ."<br>". $this->getPays(). "</h2><ul>"; //Rajout du pays
     foreach($this->contrats as $contrat){
     $result .= "<li>".$contrat->getEquipe()->getNom()." (". $contrat->getAnnee_debut_saison().")"."</li>";
     }
@@ -97,7 +97,7 @@ public function afficherEquipes(){
 
 //Fonction __tostring qui rapporte le nom, prénom et âge du joueur (inclus formule pour calculer l'âge)
 public function __toString(){
-    return $this->nom."  ".$this->prenom . " - ". $age = date_diff(new DateTime(), $this->getDateNaissance())->y. "ans";
+    return $this->nom."  ".$this->prenom . "<br>". $age = date_diff(new DateTime(), $this->getDateNaissance())->y. "ans";
 }
 
 }
