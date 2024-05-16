@@ -87,7 +87,7 @@ public function addContrat(Contrat $contrat){
     $this->contrats[] = $contrat;
 }
 public function __toString(){
-    return $this->nom."  ".$this->prenom ." né le " .$this->dateNaissance->format("d-m-Y");
+    return $this->nom."  ".$this->prenom . ": ". $age = date_diff(new DateTime(), $this->getDateNaissance())->y. "ans.";
 }
 
 }

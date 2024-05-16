@@ -16,6 +16,7 @@ $Ronaldo = new Joueur("Ronaldo"," Cristiano", "1985-02-05");
 $Psg = new Equipe("PSG", 1970);
 $Messi = new Joueur("Lionel", "Messi", "1987-06-24");
 $Mbappe = new Joueur("Kilian", "Mbappe", "1998-12-20");
+
 $Barcelone = new Equipe("FC Barcelone", "1899");
 $Neymar = new Joueur("Neymar", "Junior","1992-02-05");
 
@@ -25,13 +26,16 @@ $Gameiro = new Joueur("Kevin", "Gameiro", "1987-05-09");
 $Manchester = new Equipe("Manchester United", "1878");
 $Rashford = new Joueur("Marcus", "Rashford", "1997-10-31");
 
-$pays1 = new Pays("Italie", $Juventus);
-$pays2 = new Pays("France", $Psg);
-$pays3 = new Pays("Espagne", $Barcelone);
-$pays4 = new Pays("Angleterre", $Manchester);
+$Italie = new Pays("Italie", $Juventus);
+$France = new Pays("France", $Psg);
+$Espagne = new Pays("Espagne", $Barcelone);
+$Angleterre = new Pays("Angleterre", $Manchester);
 
-$c1 = new Contrat($Psg,$Messi, "2021");
-$c2 = new Contrat($Psg,$Mbappe, "2017");
+$c1 = new Contrat($Psg, $Messi, "2021");
+$c2 = new Contrat($Psg, $Mbappe, "2017");
+$c3 = new Contrat($Psg, $Neymar, "2017");
+
+$c4 = new Contrat($Barcelone, $Neymar, "2013");
 
 //var_dump($joueur1);
 
@@ -56,7 +60,7 @@ echo $Rcs->afficherJoueurs();
 echo $Manchester->afficherJoueurs();
 echo "<br>";
 echo "<br>";
-echo $pays1->afficherEquipes();
-echo $pays2->afficherEquipes();
-echo $pays3->afficherEquipes();
-echo $pays4->afficherEquipes();
+echo $Italie->afficherEquipes();
+echo $France->afficherEquipes();
+echo $Espagne->afficherEquipes();
+echo $Angleterre->afficherEquipes();

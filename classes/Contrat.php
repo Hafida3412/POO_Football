@@ -9,8 +9,8 @@ public function __construct(Equipe $equipe, Joueur $joueur, string $annee_debut_
     $this->equipe = $equipe;
     $this->joueur = $joueur;
     $this->annee_debut_saison = new DateTime($annee_debut_saison);
-    $this->equipe->addContrat($this);// le contrat va s'ajouter dans l'équipe
-    $this->joueur->addContrat($this);// et dans "joueur"
+    $this->equipe->addContrat($this);// le contrat va s'ajouter dans "Equipe"
+    $this->joueur->addContrat($this);// et dans "Joueur"
 }
 
     public function getEquipe()
