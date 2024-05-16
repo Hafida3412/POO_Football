@@ -13,6 +13,7 @@ public function __construct(string $nom, string $prenom, string $dateNaissance){
     $this->prenom = $prenom;
     $this->dateNaissance = new DateTime($dateNaissance);
     $this->contrats = [];
+
  
     /*$this->equipe->addJoueur($this);/*à chaque fois que je vais créer un joueur,
 il va se rajouter dans l'équipe*/   
@@ -87,6 +88,8 @@ public function addContrat(Contrat $contrat){
     $this->contrats[] = $contrat;
 
 }
+
+//Affichage des équipes d'un joueur
 public function afficherEquipes(){
     $result = "<h2> Equipes de $this</h2><ul>";
     foreach($this->contrats as $contrat){
@@ -96,6 +99,8 @@ public function afficherEquipes(){
     
     return $result;
 }
+
+
 public function __toString(){
     return $this->nom."  ".$this->prenom . ": ". $age = date_diff(new DateTime(), $this->getDateNaissance())->y. "ans.";
 }

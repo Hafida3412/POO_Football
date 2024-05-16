@@ -7,11 +7,11 @@ private string $nom;
 //private Equipe $equipe;
 private array $equipes;
 
+
 public function __construct (string $nom, Equipe $equipe) {
     $this->nom = $nom;
     $this->equipes = [];
     $this->addEquipe($equipe); // Ajoutez l'équipe passée en paramètre à la liste des équipes     
-  
 }
 
 //GETTERS AND SETTERS
@@ -44,8 +44,9 @@ public function afficherEquipes(){
     return $result;
 }
 
-    public function __toString(){
-    return $this->nom;
-}
 
+
+public function __toString(){
+return $this->nom;
+}
 }
