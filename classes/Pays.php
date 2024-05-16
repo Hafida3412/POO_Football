@@ -8,10 +8,9 @@ private string $nom;
 private array $equipes;
 
 
-public function __construct (string $nom, Equipe $equipe) {
+public function __construct (string $nom) {
     $this->nom = $nom;
     $this->equipes = [];
-    $this->addEquipe($equipe); // Ajoutez l'équipe passée en paramètre à la liste des équipes     
 }
 
 //GETTERS AND SETTERS

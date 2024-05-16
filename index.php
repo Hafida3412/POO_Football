@@ -9,29 +9,29 @@
 spl_autoload_register(function ($class_name){
     require 'classes/'. $class_name. '.php';
 });
+$Italie = new Pays("Italie");
+$France = new Pays("France");
+$Espagne = new Pays("Espagne");
+$Angleterre = new Pays("Angleterre");
 
-$Juventus = new Equipe( "Juventus", "1897-11-05"); // -> [] correspond au tableau des joueurs
+$Juventus = new Equipe( "Juventus", "1897-11-05", $Italie); // -> [] correspond au tableau des joueurs
 $Ronaldo = new Joueur("Ronaldo"," Cristiano", "1985-02-05");
 
-$Psg = new Equipe("PSG", 1970);
+$Psg = new Equipe("PSG", 1970, $France);
 $Messi = new Joueur("Lionel", "Messi", "1987-06-24");
 $Mbappe = new Joueur("Kilian", "Mbappe", "1998-12-20");
 
-$Barcelone = new Equipe("FC Barcelone", "1899");
+$Barcelone = new Equipe("FC Barcelone", "1899", $Espagne);
 $Neymar = new Joueur("Neymar", "Junior","1992-02-05");
 
-$Rcs = new Equipe("Racing Club Stras", "1906-01-01");
+$Rcs = new Equipe("Racing Club Stras", "1906-01-01", $France);
 $Gameiro = new Joueur("Kevin", "Gameiro", "1987-05-09");
 
-$Manchester = new Equipe("Manchester United", "1878");
+$Manchester = new Equipe("Manchester United", "1878-05-11", $Angleterre);
 $Rashford = new Joueur("Marcus", "Rashford", "1997-10-31");
 
-$RealMadrid = new Equipe("Real Madrid", "1902-11-06");
+$RealMadrid = new Equipe("Real Madrid", "1902-11-06", $Espagne);
 
-$Italie = new Pays("Italie", $Juventus);
-$France = new Pays("France", $Psg);
-$Espagne = new Pays("Espagne", $Barcelone);
-$Angleterre = new Pays("Angleterre", $Manchester);
 
 $c1 = new Contrat($Psg, $Messi, "2021-01-03");
 $c2 = new Contrat($Psg, $Mbappe, "2017-04-01");
