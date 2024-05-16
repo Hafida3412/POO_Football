@@ -7,14 +7,15 @@ private string $nom;
 private string $prenom;
 private DateTime $dateNaissance;
 private array $contrats;
+private Pays $pays;
 
-public function __construct(string $nom, string $prenom, string $dateNaissance){
+public function __construct(string $nom, string $prenom, string $dateNaissance, Pays $pays){
     $this->nom = $nom;
     $this->prenom = $prenom;
     $this->dateNaissance = new DateTime($dateNaissance);
     $this->contrats = [];
+    $this->pays = $pays;
 
- 
     /*$this->equipe->addJoueur($this);/*à chaque fois que je vais créer un joueur,
 il va se rajouter dans l'équipe*/   
 }
@@ -91,7 +92,7 @@ public function addContrat(Contrat $contrat){
 
 //Affichage des équipes d'un joueur
 public function afficherEquipes(){
-    $result = "<h2> Equipes de $this</h2><ul>";
+    $result = "<h2> Equipes de". $this. " ". $this->getPays(). "</h2><ul>";
     foreach($this->contrats as $contrat){
     $result .= "<li>".$contrat->getEquipe()->getNom()." (". $contrat->getAnnee_debut_saison().")"."</li>";
     }
@@ -100,7 +101,17 @@ public function afficherEquipes(){
     return $result;
 }
 
+public function getPays()
+{
+    return $this->pays;
+}
 
+public function setPays($pays)
+{
+    $this->pays = $pays;
+    
+    return $this;
+}
 public function __toString(){
     return $this->nom."  ".$this->prenom . ": ". $age = date_diff(new DateTime(), $this->getDateNaissance())->y. "ans.";
 }

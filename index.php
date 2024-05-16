@@ -13,24 +13,28 @@ $Italie = new Pays("Italie");
 $France = new Pays("France");
 $Espagne = new Pays("Espagne");
 $Angleterre = new Pays("Angleterre");
+$Portugal = new Pays("Portugal");
+$Argentine = new Pays("Argentine");
+$Bresil = new Pays("Brésil");
 
 $Juventus = new Equipe( "Juventus", "1897-11-05", $Italie); // -> [] correspond au tableau des joueurs
-$Ronaldo = new Joueur("Ronaldo"," Cristiano", "1985-02-05");
+$Ronaldo = new Joueur("Ronaldo"," Cristiano", "1985-02-05", $Portugal);
 
 $Psg = new Equipe("PSG", 1970, $France);
-$Messi = new Joueur("Lionel", "Messi", "1987-06-24");
-$Mbappe = new Joueur("Kilian", "Mbappe", "1998-12-20");
+$Messi = new Joueur("Lionel", "Messi", "1987-06-24", $Argentine);
+$Mbappe = new Joueur("Kilian", "Mbappe", "1998-12-20", $France);
 
 $Barcelone = new Equipe("FC Barcelone", "1899", $Espagne);
-$Neymar = new Joueur("Neymar", "Junior","1992-02-05");
+$Neymar = new Joueur("Neymar", "Junior","1992-02-05", $Bresil);
 
 $Rcs = new Equipe("Racing Club Stras", "1906-01-01", $France);
-$Gameiro = new Joueur("Kevin", "Gameiro", "1987-05-09");
+$Gameiro = new Joueur("Kevin", "Gameiro", "1987-05-09", $France);
 
 $Manchester = new Equipe("Manchester United", "1878-05-11", $Angleterre);
-$Rashford = new Joueur("Marcus", "Rashford", "1997-10-31");
+$Rashford = new Joueur("Marcus", "Rashford", "1997-10-31", $Angleterre);
 
 $RealMadrid = new Equipe("Real Madrid", "1902-11-06", $Espagne);
+
 
 
 $c1 = new Contrat($Psg, $Messi, "2021-01-03");
