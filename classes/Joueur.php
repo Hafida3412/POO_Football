@@ -93,7 +93,7 @@ public function addContrat(Contrat $contrat){
 public function afficherEquipes(){
     $result = "<h2> Equipes de $this</h2><ul>";
     foreach($this->contrats as $contrat){
-    $result .= "<li>".$contrat->getEquipe()." (". $contrat->getAnnee_debut_saison().")"."</li>"; "</li>";
+    $result .= "<li>".$contrat->getEquipe()->getNom()." (". $contrat->getAnnee_debut_saison().")"."</li>";
     }
     $result .= "</ul>";
     
