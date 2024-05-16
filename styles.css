@@ -5,14 +5,18 @@
     justify-content: center;
 }
 
+.card:hover {
+    transform: translateY(-15px);
+}
+
 .card{
     border: 1px solid none;
     border-radius: 5px;
     padding: 10px; 
     margin-bottom: 10px;
     width: 200px;
-    height: 200px;
-    
+    height: 200px;  
+    transition: 0.5s;
 }
 
 .card.blue {
